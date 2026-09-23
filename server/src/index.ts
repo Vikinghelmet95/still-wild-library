@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { collections } from "./data/collections";
+import { collections } from "./data/collections.js";
 
 const app = express();
 
