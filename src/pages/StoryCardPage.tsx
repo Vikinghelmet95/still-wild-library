@@ -12,11 +12,13 @@ function StoryCardPage() {
   const [error, setError] = useState("");
   const [isFlipped, setIsFlipped] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     async function fetchCollection() {
       try {
         const response = await fetch(
-          `http://localhost:3001/api/collections/${collectionId}`
+          `${API_URL}/api/collections/${collectionId}`
         );
 
         if (!response.ok) {

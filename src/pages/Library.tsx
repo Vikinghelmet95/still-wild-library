@@ -7,11 +7,13 @@ function Library() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     async function fetchCollections() {
       try {
         const response = await fetch(
-          "http://localhost:3001/api/collections"
+          `${API_URL}/api/collections`
         );
 
         if (!response.ok) {
